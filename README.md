@@ -1,7 +1,7 @@
-# Считалка стоимости топлива <img src="Favicon.svg" width="30" height="30" alt="Logo">
+# Считалка стоимости топлива <img src="favicon.svg" width="30" height="30" alt="Logo">
 Это считалка стоимости **топлива** или **нефти** или *еще чего я не знаю*. :neutral_face:
 ___
-#### Если хотите ссылку на страницу то она в описании а также вот: [nikiolee.github.io](https://nikiolee.github.io/oil-math/)
+#### Если хотите ссылку на страницу то она в описании а также вот: [nikiolee.github.io](https://nikiolee.github.io/oil-calc/)
 ___
 ## Значения а также тема сохраняется через local storage: <br> <br>
 **JavaScript**
