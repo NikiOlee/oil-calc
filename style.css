@@ -1,0 +1,399 @@
+/* --- 1. Сброс стилей --- */
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+aside,
+nav,
+footer,
+header,
+section,
+main {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul,
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button,
+input[type="submit"] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
+
+input[type="file"] {
+  max-width: 100%;
+}
+
+/* --- 2. Базовые стили и контейнеры --- */
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%; /* Запрещает WebView авто-увеличивать или ломать шрифты */
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: whitesmoke;
+  padding: 16px;
+  min-height: 100vh;
+  min-height: 100dvh; /* Корректная высота экрана в мобильных WebView */
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+  overflow-x: hidden;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  max-width: 550px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-weight: 320;
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin: 0;
+}
+
+.themeBtn {
+  position: absolute;
+  right: 0;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0px 5px;
+  border-radius: 50%;
+}
+@media (max-width: 650px) {
+  .themeBtn {
+    padding: 10px 20px;
+  }
+}
+.container {
+  width: 100%;
+  max-width: 550px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.containerAll {
+  background-color: white;
+  padding: 10px 35px 35px 35px;
+  border-radius: 13px;
+  box-shadow: #bebebe 0 0 10px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  width: calc(50% - 6px);
+  min-width: 130px;
+}
+
+.advanced-settings {
+  width: 100%;
+}
+
+.advanced-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.advanced-container .input-group {
+  width: calc(50% - 6px);
+  min-width: 130px;
+}
+
+p {
+  margin-bottom: 6px;
+  font-size: 0.875rem;
+  color: #555;
+  text-align: left;
+}
+
+div label p {
+  color: #222;
+}
+
+input {
+  background-color: white;
+  border: 1px solid #ccc;
+  color: black;
+  padding: 12px 10px;
+  border-radius: 13px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  font-size: 1rem;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input:focus {
+  outline: 2px solid rgb(0, 150, 255);
+  border-color: rgb(0, 150, 255);
+}
+
+button#calcBtn {
+  width: 100%;
+  max-width: 550px;
+  border-radius: 8px;
+  padding: 14px 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  background-color: rgb(0, 150, 255);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.125rem;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s;
+  touch-action: manipulation;
+}
+
+button#calcBtn:active {
+  transform: scale(0.98);
+}
+
+button#calcBtn:hover {
+  background-color: #007bdd;
+}
+
+details {
+  cursor: pointer;
+  user-select: none;
+  margin-top: 8px;
+  width: 100%;
+}
+
+details summary {
+  font-size: 0.95rem;
+  color: black;
+  padding: 6px 0;
+  outline: none;
+}
+
+/* --- 3. Таблица результатов --- */
+.table-container {
+  width: 100%;
+  max-width: 550px;
+  overflow-x: auto;
+  border-radius: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+table th,
+table td {
+  padding: 10px 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  font-weight: 600;
+  color: #333;
+  background-color: #d6d6d6;
+}
+
+div table thead tr th {
+  color: #222;
+}
+
+table td.right,
+table th.right {
+  text-align: right;
+}
+
+table td.bold {
+  font-weight: 700;
+}
+
+#resTotalLiter {
+  font-size: 1.15rem;
+}
+
+/* --- 4. Тёмная тема (со стилями для полей ввода) --- */
+body.dark-theme {
+  background-color: #1a1a1a;
+  color: whitesmoke;
+}
+
+body.dark-theme h1 {
+  color: whitesmoke;
+}
+
+body.dark-theme div label p {
+  color: #ddd;
+}
+
+body.dark-theme div table thead tr th {
+  color: whitesmoke;
+}
+
+body.dark-theme table th,
+body.dark-theme table td {
+  border-bottom-color: #333;
+}
+
+body.dark-theme input {
+  background-color: #2a2a2a;
+  border-color: #444;
+  color: whitesmoke;
+}
+
+body.dark-theme details summary {
+  color: whitesmoke;
+}
+body.dark-theme #calcBtn {
+  background-image: linear-gradient(to bottom, #fdc801, #e30415);
+}
+body.dark-theme .containerAll {
+  background-color: #1a1a1a;
+  box-shadow: rgba(255, 102, 0, 0.3) 0 0 20px;
+}
+body.dark-theme th {
+  background-color:#222;
+}
+/* --- 5. Мобильные стили и WebView --- */
+@media (max-width: 500px) {
+  body {
+    padding: 12px 10px;
+  }
+
+  .header {
+    margin-top: 5px;
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  button#calcBtn {
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  table th,
+  table td {
+    padding: 8px 4px;
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-height: 600px) {
+  .header {
+    margin-top: 2px;
+    margin-bottom: 10px;
+  }
+
+  button#calcBtn {
+    margin-bottom: 12px !important;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Расчет цены",
+  "short_name": "Расчет",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#0096ff",
+  "icons": [
+    {
+      "src": "Logo.png",
+      "sizes": "283x283",
+      "type": "image/png"
+    }
+  ]
+}

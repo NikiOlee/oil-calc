@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <link rel="shortcut icon" href="Logo.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="Logo.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="Logo.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="Logo.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <title>Расчет цены</title>
+  </head>
+  <body>
+    <button class="themeBtn" type="button">🌝</button>
+    <div class="containerAll">
+      <header class="header">
+        <h1>Расчет цены</h1>
+      </header>
+
+      <div class="container">
+        <label class="input-group">
+          <p>Цена закупки (р/т):</p>
+          <input type="number" value="110000" step="1000" id="7" />
+        </label>
+
+        <label class="input-group">
+          <p>Отсрочка (дн):</p>
+          <input type="number" value="17" id="4" />
+        </label>
+
+        <label class="input-group">
+          <p>Плотность (кг/л):</p>
+          <input type="number" value="0.835" step="0.001" id="5" />
+        </label>
+
+        <label class="input-group">
+          <p>Цена доставки (р/л):</p>
+          <input type="number" value="3.3" step="0.1" id="6" />
+        </label>
+
+        <details class="advanced-settings">
+          <summary>Дополнительные параметры</summary>
+          <div class="advanced-container">
+            <label class="input-group">
+              <p>Ст-ть денег (%/дн):</p>
+              <input type="number" value="0.06" step="0.01" id="1" />
+            </label>
+
+            <label class="input-group">
+              <p>Мин. наценка (%):</p>
+              <input type="number" value="1.0" step="0.1" id="2" />
+            </label>
+
+            <label class="input-group">
+              <p>Доходность (%/год):</p>
+              <input type="number" value="70.0" step="1" id="3" />
+            </label>
+          </div>
+        </details>
+      </div>
+
+      <button id="calcBtn" type="button">Рассчитать</button>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Ед.изм</th>
+              <th class="right">Цена</th>
+              <th class="right">Доставка</th>
+              <th class="right">ИТОГО</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>руб/тонна</td>
+              <td class="right"><span id="resPriceTon">0</span></td>
+              <td class="right"><span id="resDelivTon">0</span></td>
+              <td class="right bold"><span id="resTotalTon">0</span></td>
+            </tr>
+            <tr>
+              <td>руб/литр</td>
+              <td class="right"><span id="resPriceLiter">0</span></td>
+              <td class="right"><span id="resDelivLiter">0</span></td>
+              <td class="right bold"><span id="resTotalLiter">0</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="localStorage.js"></script>
+    <script src="script.js"></script>
+    <script src="theme.js"></script>
+    <script src="advanced-settings.js"></script>
+  </body>
+</html>
